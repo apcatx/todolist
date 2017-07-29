@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body>
+    <h1>This is my page</h1>
+    <div class="wrapper">
+      <form action="/" method="POST">
+        <div class="fields" id="fields">
+          <input type="text" name="addTodo" placeholder="Enter your todos..." />
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+        <div class="todos">
+          <ul>
+          {{ #todos }}
+            <li>
+              <form action="/mark-complete/{{ id }}" method="POST"><button>MARK COMPLETE</button></form>
+              {{ #complete }} <del> {{ /complete }}
+                {{ text }}
+              {{ #complete }} </del> {{ /complete }}
+            </li>
+          {{ /todos }}
+          </ul>
+        </div>
+
+      <br>
+
+
+    </div>
+  </body>
+</html>
